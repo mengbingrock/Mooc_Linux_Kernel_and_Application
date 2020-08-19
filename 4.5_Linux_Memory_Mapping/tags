@@ -1,0 +1,31 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+KERNELDIR	Makefile	/^	KERNELDIR ?= \/lib\/modules\/$(shell uname -r)\/build$/;"	m
+LEN	maptest_read.c	/^#define LEN /;"	d	file:
+LEN	maptest_write.c	/^#define LEN /;"	d	file:
+MAPLEN	map_driver.c	/^#define MAPLEN /;"	d	file:
+MAP_DEV_MAJOR	map_driver.c	/^#define MAP_DEV_MAJOR /;"	d	file:
+MAP_DEV_NAME	map_driver.c	/^#define MAP_DEV_NAME /;"	d	file:
+MAP_PAGE_COUNT	map_driver.c	/^#define MAP_PAGE_COUNT /;"	d	file:
+PWD	Makefile	/^	PWD := $(shell pwd)$/;"	m
+main	maptest_read.c	/^int main(void)  $/;"	f
+main	maptest_write.c	/^int main(void) $/;"	f
+map_fault	map_driver.c	/^int map_fault(struct vm_fault *vmf)  $/;"	f
+map_vclose	map_driver.c	/^void map_vclose(struct vm_area_struct *vma)  $/;"	f
+map_vm_ops	map_driver.c	/^static struct vm_operations_struct map_vm_ops = {$/;"	v	typeref:struct:vm_operations_struct	file:
+map_vopen	map_driver.c	/^void map_vopen(struct vm_area_struct *vma)  $/;"	f
+mapdev	map_driver.h	/^	struct cdev mapdev;$/;"	m	struct:mapdrvo	typeref:struct:mapdrvo::cdev
+mapdrv_exit	map_driver.c	/^module_exit(mapdrv_exit);  $/;"	v
+mapdrv_exit	map_driver.c	/^static void __exit mapdrv_exit(void)  $/;"	f	file:
+mapdrv_init	map_driver.c	/^module_init(mapdrv_init);  $/;"	v
+mapdrv_init	map_driver.c	/^static int __init mapdrv_init(void)  $/;"	f	file:
+mapdrv_mmap	map_driver.c	/^static int mapdrv_mmap(struct file *file, struct vm_area_struct *vma)  $/;"	f	file:
+mapdrv_open	map_driver.c	/^static int mapdrv_open(struct inode *inoe, struct file *file)$/;"	f	file:
+mapdrvo	map_driver.h	/^struct mapdrvo$/;"	s
+mapdrvo_fops	map_driver.c	/^static struct file_operations mapdrvo_fops = {  $/;"	v	typeref:struct:file_operations	file:
+usage	map_driver.h	/^	atomic_t usage;$/;"	m	struct:mapdrvo
+vmalloc_area	map_driver.c	/^static char *vmalloc_area = NULL;  $/;"	v	file:

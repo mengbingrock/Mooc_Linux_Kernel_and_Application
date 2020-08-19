@@ -1,0 +1,25 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BACKTRACE_DEPTH	main.c	/^#define BACKTRACE_DEPTH /;"	d	file:
+FIXED_1	main.c	/^#define FIXED_1	/;"	d	file:
+FSHIFT	main.c	/^#define FSHIFT	/;"	d	file:
+KERNEL_BUILD_PATH	Makefile	/^		KERNEL_BUILD_PATH := \/lib\/modules\/`uname -r`\/build$/;"	m
+LOAD_FRAC	main.c	/^#define LOAD_FRAC(/;"	d	file:
+LOAD_INT	main.c	/^#define LOAD_INT(/;"	d	file:
+MODNAME	Makefile	/^		export MODNAME=load_monitor$/;"	m
+OS_VER	Makefile	/^		OS_VER := UBUNTU_1604$/;"	m
+OS_VER	Makefile	/^OS_VER := UNKNOWN$/;"	m
+PWD	Makefile	/^		export PWD=`pwd`$/;"	m
+UNAME	Makefile	/^UNAME := $(shell uname -r)$/;"	m
+check_load	main.c	/^static void check_load(void)$/;"	f	file:
+load_monitor_exit	main.c	/^static void load_monitor_exit(void)$/;"	f	file:
+load_monitor_init	main.c	/^static int load_monitor_init(void)$/;"	f	file:
+monitor_handler	main.c	/^static enum hrtimer_restart monitor_handler(struct hrtimer *hrtimer)$/;"	f	file:
+print_all_task_stack	main.c	/^static void print_all_task_stack(void)$/;"	f	file:
+ptr_avenrun	main.c	/^static unsigned long *ptr_avenrun;$/;"	v	file:
+start_timer	main.c	/^static void start_timer(void)$/;"	f	file:
+timer	main.c	/^struct hrtimer timer;$/;"	v	typeref:struct:hrtimer

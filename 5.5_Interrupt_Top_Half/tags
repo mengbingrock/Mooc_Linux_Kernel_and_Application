@@ -1,0 +1,20 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CURRENT_PATH	Makefile	/^CURRENT_PATH:=$(shell pwd)             #模块所在的当前路径$/;"	m
+LINUX_KERNEL	Makefile	/^LINUX_KERNEL:=$(shell uname -r)        #linux内核代码的当前版本$/;"	m
+LINUX_KERNEL_PATH	Makefile	/^LINUX_KERNEL_PATH:=\/usr\/src\/linux-headers-$(LINUX_KERNEL)$/;"	m
+devid	interrupt.c	/^    int devid;$/;"	m	struct:myirq	file:
+devname	interrupt.c	/^static char * devname;			$/;"	v	file:
+irq	interrupt.c	/^static int irq;					$/;"	v	file:
+mydev	interrupt.c	/^struct myirq mydev={1119};$/;"	v	typeref:struct:myirq
+myirq	interrupt.c	/^struct myirq$/;"	s	file:
+myirq_exit	interrupt.c	/^module_exit(myirq_exit);/;"	v
+myirq_exit	interrupt.c	/^static void __exit myirq_exit(void)$/;"	f	file:
+myirq_handler	interrupt.c	/^static irqreturn_t myirq_handler(int irq,void * dev)$/;"	f	file:
+myirq_init	interrupt.c	/^module_init(myirq_init);$/;"	v
+myirq_init	interrupt.c	/^static int __init myirq_init(void)$/;"	f	file:
+obj-m	Makefile	/^obj-m:=interrupt.o                          #产生interrupt模块的目标文件$/;"	m
