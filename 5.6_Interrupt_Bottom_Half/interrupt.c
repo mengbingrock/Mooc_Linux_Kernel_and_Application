@@ -5,6 +5,7 @@
 
 static int irq;
 static char * devname;
+pid_t mypid;
 
 module_param(irq,int,0644);
 module_param(devname,charp,0644);
@@ -22,6 +23,8 @@ static struct tasklet_struct mytasklet;
 static void mytasklet_handler(unsigned long data)
 {
 	printk("I am mytasklet_handler");
+	mypid = getpid();
+	printk("[%d] tasklet pid\n", mypid);
 }
 
 //中断处理函数
