@@ -69,7 +69,7 @@ static void print_all_task_stack(void)
 	printk("dump running task.\n");
 	do_each_thread(g, p) {
 		if (p->state == TASK_RUNNING) {
-			printk("running task, comm: %s, pid %d\n",
+			printk("running task, process name: %s, pid %d\n",
 				p->comm, p->pid);
 			memset(&trace, 0, sizeof(trace));
 			memset(backtrace, 0, BACKTRACE_DEPTH * sizeof(unsigned long));
@@ -83,7 +83,7 @@ static void print_all_task_stack(void)
 	printk("dump uninterrupted task.\n");
 	do_each_thread(g, p) {
 		if (p->state & TASK_UNINTERRUPTIBLE) {
-			printk("uninterrupted task, comm: %s, pid %d\n",
+			printk("uninterrupted task, name: %s, pid %d\n",
 				p->comm, p->pid);
 			memset(&trace, 0, sizeof(trace));
 			memset(backtrace, 0, BACKTRACE_DEPTH * sizeof(unsigned long));
@@ -102,16 +102,17 @@ static void check_load(void)
 	static ktime_t last;
 	u64 ms;
 	int load = LOAD_INT(ptr_avenrun[0]); /* 最近1分钟的Load值 */
-
-	if (load < 3)
+	
+	if (load < 1)
 		return;
 
 	/**
 	 * 如果上次打印时间与当前时间相差不到20秒，就直接退出
 	 */
 	ms = ktime_to_ms(ktime_sub(ktime_get(), last));
-	if (ms < 20 * 1000)
+	if (ms < 1 * 1000)
 		return;
+	printk("load is %i\n",load);
 
 	last = ktime_get();
 	print_all_task_stack();
