@@ -23,7 +23,7 @@ static int __init print_pid(void)
 	{
 		p = list_entry(pos,struct task_struct,tasks);
 		count++;
-		printk("\n\n");
+		printk("THREAD NAME = %s\n", p->comm);
 		printk("pid:%d; state:%lx; prio:%d; static_prio:%d; parent'pid:%d; count:%d; umask:%d;",	\
 			p->pid,p->state,p->prio,p->static_prio,(p->parent)->pid,								\
 			atomic_read((&(p->files)->count)),(p->fs)->umask);

@@ -2,6 +2,11 @@
 # include <linux/init.h>
 # include <linux/module.h>
 # include <linux/interrupt.h>
+#include <linux/sched.h>
+# include <linux/fdtable.h>
+# include <linux/fs_struct.h>
+# include <linux/mm_types.h>
+
 
 static int irq;
 static char * devname;
@@ -22,9 +27,14 @@ static struct tasklet_struct mytasklet;
 //中断下半部处理函数
 static void mytasklet_handler(unsigned long data)
 {
+	struct task_struct *p;
+	p=current;
 	printk("I am mytasklet_handler");
-	mypid = getpid();
-	printk("[%d] tasklet pid\n", mypid);
+	printk("THREAD NAME = %s\n", p->comm);
+	printk("My current process id/pid is %d\n", current->pid);
+	printk("pid:%d; state:%lx; prio:%d; static_prio:%d; parent'pid:%d; count:%d; umask:%d;\n", p->pid,p->state,p->prio,p->static_prio,(p->parent)->pid,atomic_read((&(p->files)->count)),(p->fs)->umask);
+	//mypid = getpid();
+	//printk("[%d] tasklet pid\n", mypid);
 }
 
 //中断处理函数
