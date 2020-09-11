@@ -18,7 +18,7 @@ int main(void)
     char *vadr;  
     char array[LEN];
     struct timeval tv1,tv2;    
-    int *array2 = (int *)malloc( sizeof(int)*LEN);
+    char *array2 = (char *)malloc( sizeof(int)*LEN);
 
  
     printf("my pid and ppid is %ld %ld\n", (long)getpid(), (long)getppid());
@@ -43,7 +43,8 @@ int main(void)
     for(loop=0;loop<LEN;loop++){
         //printf("a",vadr+4096*loop,vadr+4096*loop);
 	//strcpy(array[loop],"a");
-	++array2[loop];
+	strcpy(&array2[loop], "1");
+	//++array2[loop];
     }
 
     gettimeofday(&tv1, NULL);
