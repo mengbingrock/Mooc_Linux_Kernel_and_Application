@@ -11,6 +11,7 @@ int main(void)
     char *vadr;  
   
     if ((fd = open("/dev/mapnopage", O_RDWR)) < 0) {  
+	printf("failed to open\n");
         return 0;  
     }  
     vadr = mmap(0, LEN, PROT_READ | PROT_WRITE, MAP_SHARED | MAP_LOCKED, fd, 0);  
